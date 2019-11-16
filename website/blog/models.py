@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=128, verbose_name="文章分類")
@@ -40,6 +41,10 @@ class Entry(models.Model):
 
     def __str__(self):
         return self.entry_title
+
+    def get_absolute_url(self):
+        return reverse('blog:blog_detail',kwargs={'blog_id':self.id})
+
     class Meta:
         ordering = ['-created_time']
         verbose_name = '文章'

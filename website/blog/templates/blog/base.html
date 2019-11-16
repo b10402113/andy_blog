@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}基本模板{% endblock %}</title>
+    <link href="{% static 'bootstrap-4.0.0-dist/css/bootstrap.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet"/>
+
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+    {#  標題列  #}
+    <div class="navbar">
+        <div class="container">
+            {#   navbar left   #}
+            <ul class="nav nav-left">
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Andy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">文章分類</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">推薦閱讀</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">關於我</a>
+              </li>
+            </ul>
+            <ul class="nav justify-content-end nav-right">
+              <li class="nav-item">
+                <a class="nav-link" href="#">fb</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">medium</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ig</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">email</a>
+              </li>
+            </ul>
+        </div>
+    </div>
+    {#  文章列表  #}
+    {% block content %}
+
+    {% endblock %}
+    <div class="footer">
+        <div class="container">
+
+        </div>
+    </div>
+    <script src="{% static 'jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'bootstrap-4.0.0-dist/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

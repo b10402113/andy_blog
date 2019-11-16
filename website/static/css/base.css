@@ -1,0 +1,17 @@
+
+body,a{
+    color: #4a4a4a;
+}
+li{
+    text-decoration: none;
+}
+.container{
+    max-width: 800px;
+}
+.navbar{
+    border-bottom: 1px solid #dbdbdb;
+}
+.footer .container{
+    max-width: 800px;
+    border-top: 1px solid #dbdbdb;
+}

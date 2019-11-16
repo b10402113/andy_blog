@@ -1,0 +1,23 @@
+.entries{
+    margin-top: 3em;
+}
+.entries a{
+    cursor: pointer;
+    text-decoration: none;
+}
+.entries h1{
+    color: #363636;
+    font-weight: 400;
+    line-height: 1.125;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    text-decoration: none;
+}
+.entry-date{
+    font-weight: 300;
+    font-size: 1em;
+}
+
+.category-name{
+    color: #363636;
+}

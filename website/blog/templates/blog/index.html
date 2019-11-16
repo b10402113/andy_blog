@@ -1,0 +1,69 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block title %}
+{% endblock %}
+{% block css %}
+    <link href="{% static 'css/index.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+    <div class="article-field">
+        <div class="container">
+            <div class="featured entries">
+                <ul>
+                    {% for entry in feature_entries %}
+                        <li>
+                            <h1><a href="{{ entry.get_absolute_url }}" class="entry-title">{{ entry.entry_title }}</a>
+                            </h1>
+                            <p class="entry-date">{{ entry.created_time|date }}
+                                <span>
+                                {% for category in  entry.category.all %}
+                                    <a href="#" class="category-name">&nbsp;&nbsp;{{ category.name }}</a>
+                                {% endfor %}
+                            </span>
+                            </p>
+                            <p>
+                                {% if entry.entry_img %}
+                                    <img src="{{ entry.entry_img.url }}" width="100%"/>
+                                {% endif %}
+                            </p>
+                            <p class="entry-body">
+                                {{ entry.entry_abstract }}
+                            </p>
+
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="entries">
+                <ul>
+                    {% for entry in entries %}
+                        <li>
+                            <h1><a href="{{ entry.get_absolute_url }}" class="entry-title">{{ entry.entry_title }}</a>
+                            </h1>
+                            <p class="entry-date">{{ entry.created_time|date }}
+                                <span>
+                                {% for category in  entry.category.all %}
+                                    <a href="#" class="category-name">&nbsp;&nbsp;{{ category.name }}</a>
+                                {% endfor %}
+                            </span>
+                            </p>
+                            <p>
+                                {% if entry.entry_img %}
+                                    <img src="{{ entry.entry_img.url }}" width="100%"/>
+                                {% endif %}
+                            </p>
+                            <p class="entry-body">
+                                {{ entry.entry_abstract }}
+                            </p>
+
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

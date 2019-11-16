@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('entry_title', models.CharField(max_length=128, verbose_name='文章標題')),
-                ('entry_img', models.ImageField(blank=True, null=True, upload_to='blog_images', verbose_name='文章圖片')),
+                ('entry_img', models.ImageField(blank=True, null=True, upload_to='media', verbose_name='文章圖片')),
                 ('entry_body', models.TextField(verbose_name='文章正文')),
                 ('entry_abstract', models.TextField(blank=True, max_length=256, null=True, verbose_name='文章摘要')),
                 ('entry_visiting', models.PositiveIntegerField(default=0, verbose_name='觀看次數')),

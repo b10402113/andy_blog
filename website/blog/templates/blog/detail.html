@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block title %}
+{% endblock %}
+{% block css %}
+
+    <link rel="stylesheet" href="{% static 'css/github.css' %}">
+    <link href="{% static 'css/detail.css' %}" rel="stylesheet"/>
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="entries">
+            <h1><a href="{{ entry.get_absolute_url }}" class="entry-title">{{ entry.entry_title }}</a></h1>
+            <p class="entry-date">{{ entry.created_time|date }}
+                <span >
+                    {% for category in  entry.category.all %}
+                        <a href="#" class="category-name" >&nbsp;&nbsp;{{ category.name }}</a>
+                    {% endfor %}
+                </span>
+            </p>
+            <p>
+                {% if entry.entry_img %}
+                    <img src="{{ entry.entry_img }}" />
+                {% endif %}
+            </p>
+            <p class="entry-body">
+                {{ entry.entry_body | safe }}
+            </p>
+        </div>
+        </div>
+
+{% endblock %}
